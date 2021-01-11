@@ -8,6 +8,10 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+    <PackageReference Include="Autofac" Version="6.1.0" />
+    <PackageReference Include="Microcharts" Version="0.9.5.9" />
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -17,5 +21,9 @@
     <Folder Include="Modules\Transactions\" />
     <Folder Include="Common\" />
     <Folder Include="Common\Controls\" />
+    <Folder Include="Common\Styles\" />
+    <Folder Include="Common\Base\" />
+    <Folder Include="Common\Models\" />
+    <Folder Include="Common\Controllers\" />
   </ItemGroup>
 </Project>
