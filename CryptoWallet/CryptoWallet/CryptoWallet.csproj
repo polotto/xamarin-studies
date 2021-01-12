@@ -25,5 +25,7 @@
     <Folder Include="Common\Base\" />
     <Folder Include="Common\Models\" />
     <Folder Include="Common\Controllers\" />
+    <Folder Include="Modules\AddTransaction\" />
+    <Folder Include="Common\Navigation\" />
   </ItemGroup>
 </Project>

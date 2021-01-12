@@ -73,6 +73,15 @@ namespace CryptoWallet.Common.Controllers
                     StatusImageSource = Constants.TRANSACTION_DEPOSITED_IMAGE,
                     Symbol = "LTC",
                     TransactionDate = DateTime.Now
+                },
+                new Transaction
+                {
+                    Amount = 1,
+                    DollarValue = 150,
+                    Status = Constants.TRANSACTION_WITHDRAWN,
+                    StatusImageSource = Constants.TRANSACTION_WITHDRAWN_IMAGE,
+                    Symbol = "LTC",
+                    TransactionDate = DateTime.Now
                 }
             });
         }

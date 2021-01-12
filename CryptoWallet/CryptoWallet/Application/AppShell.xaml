@@ -33,7 +33,8 @@
     </Shell.FlyoutHeader>
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems"
-                Style="{StaticResource BaseStyle}">
+                Style="{StaticResource BaseStyle}"
+                Route="portfolio">
         <ShellContent Title="Portifolio"
                       ContentTemplate="{DataTemplate wallet:WalletView}"/>
     </FlyoutItem>
