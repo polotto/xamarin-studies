@@ -27,5 +27,7 @@
     <Folder Include="Common\Controllers\" />
     <Folder Include="Modules\AddTransaction\" />
     <Folder Include="Common\Navigation\" />
+    <Folder Include="Common\Converters\" />
+    <Folder Include="Common\Validations\" />
   </ItemGroup>
 </Project>
