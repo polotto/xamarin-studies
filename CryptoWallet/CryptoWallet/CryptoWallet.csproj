@@ -33,5 +33,6 @@
     <Folder Include="Common\Database\" />
     <Folder Include="Common\Extensions\" />
     <Folder Include="Common\Dialog\" />
+    <Folder Include="Common\Network\" />
   </ItemGroup>
 </Project>

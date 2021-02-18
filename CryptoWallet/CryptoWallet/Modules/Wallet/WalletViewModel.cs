@@ -7,6 +7,8 @@ using System.Windows.Input;
 using CryptoWallet.Common.Base;
 using CryptoWallet.Common.Controllers;
 using CryptoWallet.Common.Models;
+using CryptoWallet.Common.Navigation;
+using CryptoWallet.Modules.AddTransaction;
 using Microcharts;
 using SkiaSharp;
 using Xamarin.Forms;
@@ -16,10 +18,13 @@ namespace CryptoWallet.Modules.Wallet
     public class WalletViewModel: BaseViewModel
     {
         private IWalletController _walletController;
+        private INavigationService _navigationService;
 
-        public WalletViewModel(IWalletController walletController)
+        public WalletViewModel(IWalletController walletController,
+                               INavigationService navigationService)
         {
             _walletController = walletController;
+            _navigationService = navigationService;
             Assets = new ObservableCollection<Coin>();
             LatestTransactions = new ObservableCollection<Transaction>();
         }
@@ -129,7 +134,7 @@ namespace CryptoWallet.Modules.Wallet
 
         private async Task AddNewTransaction()
         {
-
+            await _navigationService.PushAsync<AddTransactionViewModel>();
         }
 
         private decimal _portfolioValue;

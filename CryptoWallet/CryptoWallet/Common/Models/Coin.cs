@@ -16,13 +16,8 @@ namespace CryptoWallet.Common.Models
 
         public Coin() {  }
 
-        [JsonProperty("id")]
-        public int CoinId { get; set; }
-        [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonProperty("symbol")]
         public string Symbol { get; set; }
-        [JsonProperty("price")]
         public decimal Price { get; set; }
         public decimal Amount { get; set; }
         public decimal DollarValue { get; set; }
