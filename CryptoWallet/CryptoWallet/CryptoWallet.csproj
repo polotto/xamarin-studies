@@ -12,6 +12,7 @@
     <PackageReference Include="Microcharts" Version="0.9.5.9" />
     <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Application\" />
@@ -29,5 +30,8 @@
     <Folder Include="Common\Navigation\" />
     <Folder Include="Common\Converters\" />
     <Folder Include="Common\Validations\" />
+    <Folder Include="Common\Database\" />
+    <Folder Include="Common\Extensions\" />
+    <Folder Include="Common\Dialog\" />
   </ItemGroup>
 </Project>

@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using Autofac;
+using CryptoWallet.Common.Database;
+using CryptoWallet.Common.Models;
 using Xamarin.Forms;
 
 namespace CryptoWallet
@@ -18,8 +20,7 @@ namespace CryptoWallet
             builder.RegisterAssemblyTypes(dataAccess)
                    .AsImplementedInterfaces()
                    .AsSelf();
-            //TODO - register repositories if you use them
-            //builder.RegisterType<Repository<User>>().As<IRepository<User>>();
+            builder.RegisterType<Repository<Transaction>>().As<IRepository<Transaction>>();
 
             //get container
             Container = builder.Build();

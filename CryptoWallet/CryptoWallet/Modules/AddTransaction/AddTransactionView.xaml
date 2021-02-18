@@ -5,6 +5,9 @@
     xmlns:converters="clr-namespace:CryptoWallet.Common.Converters"
     x:Class="CryptoWallet.Modules.AddTransaction.AddTransactionView"
     Shell.TabBarIsVisible="False">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBackCommand}" />
+    </Shell.BackButtonBehavior>
     <ContentPage.Resources>
         <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
         <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
