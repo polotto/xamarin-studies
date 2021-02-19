@@ -7,7 +7,7 @@
     Shell.FlyoutBehavior="Disabled">
     <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand"
-                     Background="{StaticResource LightBlueBackground}">
+                     BackgroundColor="{StaticResource LightBlueBackground}">
             <Grid>
                 <CarouselView ItemsSource="{Binding OnboardingSteps}"
                               HorizontalScrollBarVisibility="Never"
