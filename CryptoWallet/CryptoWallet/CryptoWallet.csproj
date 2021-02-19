@@ -34,5 +34,10 @@
     <Folder Include="Common\Extensions\" />
     <Folder Include="Common\Dialog\" />
     <Folder Include="Common\Network\" />
+    <Folder Include="Modules\Loading\" />
+    <Folder Include="Modules\Onboarding\" />
+    <Folder Include="Modules\Login\" />
+    <Folder Include="Modules\Register\" />
+    <Folder Include="Common\Security\" />
   </ItemGroup>
 </Project>

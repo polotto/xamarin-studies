@@ -2,6 +2,7 @@
 using Autofac;
 using CryptoWallet.Common.Database;
 using CryptoWallet.Common.Models;
+using CryptoWallet.Modules.Loading;
 using Xamarin.Forms;
 
 namespace CryptoWallet
@@ -21,11 +22,12 @@ namespace CryptoWallet
                    .AsImplementedInterfaces()
                    .AsSelf();
             builder.RegisterType<Repository<Transaction>>().As<IRepository<Transaction>>();
+            builder.RegisterType<Repository<User>>().As<IRepository<User>>();
 
             //get container
             Container = builder.Build();
             //set first page
-            MainPage = new AppShell();
+            MainPage = Container.Resolve<LoadingView>();
         }
     }
 }
