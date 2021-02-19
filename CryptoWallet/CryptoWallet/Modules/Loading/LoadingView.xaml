@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center"
                      HorizontalOptions="Center">
-            <ActivityIndicator Color="Accent"
+            <ActivityIndicator Color="{StaticResource PrimaryBlue}"
                                IsRunning="True"
                                IsVisible="True"/>
             <Label Text="Loading..." />

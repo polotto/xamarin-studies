@@ -26,7 +26,7 @@ namespace CryptoWallet.Modules.Loading
                 return _navigationService.InsertAsRoot<OnboardingViewModel>();
             }
 
-            if (!Preferences.ContainsKey(Constants.IS_USER_LOGGED_IN)
+            if (Preferences.ContainsKey(Constants.IS_USER_LOGGED_IN)
                 && Preferences.Get(Constants.IS_USER_LOGGED_IN, false) == true)
             {
                 _navigationService.GoToMainFlow();
