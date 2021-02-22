@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:CryptoWallet.Common.Converters"
+    xmlns:locale="clr-namespace:CryptoWallet.Common.Localization"
     x:Class="CryptoWallet.Modules.Login.LoginView"
     Shell.NavBarIsVisible="False"
     Shell.FlyoutBehavior="Disabled">
@@ -16,7 +17,7 @@
                          VerticalOptions="EndAndExpand"
                          Margin="0,0,0,70">
                 <Label Style="{StaticResource TitleLabel}"
-                       Text="Welcome Back!"/>
+                       Text="{x:Static locale:Resources.Login_WelcomeBack}"/>
                 <Image Source="login.png"
                        Margin="0,30,0,0"
                        HeightRequest="200"/>
@@ -53,7 +54,7 @@
                                  VerticalOptions="EndAndExpand"
                                  Margin="0,0,0,80">
                         <Button Style="{StaticResource BlueButton}"
-                            Text="Login"
+                            Text="{x:Static locale:Resources.Login_Login}"
                             Command="{Binding LoginCommand}"
                             VerticalOptions="EndAndExpand" />
                         <Button Style="{StaticResource NoBackgroundSmallButton}"

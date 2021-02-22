@@ -39,13 +39,30 @@
     <Folder Include="Modules\Login\" />
     <Folder Include="Modules\Register\" />
     <Folder Include="Common\Security\" />
+    <Folder Include="Common\Localization\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Common\Localization\Resources.Designer.cs">
       <DependentUpon>Resources.pt-BR</DependentUpon>
     </Compile>
+    <Compile Update="Common\Localization\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Common\Localization\Resources.pt-BR.Designer.cs">
+      <DependentUpon>Resources.pt-BR.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Remove="Common\Localization\Resources.pt-BR" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Common\Localization\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Common\Localization\Resources.pt-BR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

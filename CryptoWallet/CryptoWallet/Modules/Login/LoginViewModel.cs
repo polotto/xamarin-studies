@@ -8,6 +8,7 @@ using CryptoWallet.Common.Database;
 using CryptoWallet.Common.Dialog;
 using CryptoWallet.Common.Models;
 using CryptoWallet.Common.Navigation;
+using CryptoWallet.Common.Localization;
 using CryptoWallet.Common.Validations;
 using CryptoWallet.Modules.Register;
 using Xamarin.Essentials;
@@ -83,7 +84,7 @@ namespace CryptoWallet.Modules.Login
 
         private async Task DisplayCredentialsError()
         {
-            await _dialogMessage.DisplayAlert(Resources., "Credentials are wrong.", "Ok");
+            await _dialogMessage.DisplayAlert(Resources.Login_Error, Resources.Login_WrongCredentials, Resources.Login_Ok);
             Password.Value = "";
         }
 
