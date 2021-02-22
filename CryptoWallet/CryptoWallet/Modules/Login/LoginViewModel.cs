@@ -75,13 +75,15 @@ namespace CryptoWallet.Modules.Login
             }
 
             Preferences.Set(Constants.IS_USER_LOGGED_IN, true);
+            Preferences.Set(Constants.USER_ID, Email.Value);
+
             _navigationService.GoToMainFlow();
             IsBusy = false;
         }
 
         private async Task DisplayCredentialsError()
         {
-            await _dialogMessage.DisplayAlert("Error", "Credentials are wrong.", "Ok");
+            await _dialogMessage.DisplayAlert(Resources., "Credentials are wrong.", "Ok");
             Password.Value = "";
         }
 

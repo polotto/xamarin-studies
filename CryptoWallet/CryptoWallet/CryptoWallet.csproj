@@ -40,4 +40,12 @@
     <Folder Include="Modules\Register\" />
     <Folder Include="Common\Security\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Common\Localization\Resources.Designer.cs">
+      <DependentUpon>Resources.pt-BR</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Common\Localization\Resources.pt-BR" />
+  </ItemGroup>
 </Project>

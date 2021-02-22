@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CryptoWallet.Common.Database;
 using CryptoWallet.Common.Models;
 using CryptoWallet.Common.Network;
+using Xamarin.Essentials;
 
 namespace CryptoWallet.Common.Controllers
 {
@@ -100,8 +101,10 @@ namespace CryptoWallet.Common.Controllers
             {
                 _cachedCoins = await _cryptoService.GetLatestPrices();
             }
+            var currentUser = Preferences.Get(Constants.USER_ID, string.Empty);
             var transactions = await _transactionRepository.GetAllAsync();
-            transactions = transactions.OrderByDescending(x => x.TransactionDate).ToList();
+            transactions = transactions.Where(x => x.UserEmail == currentUser)
+                .OrderByDescending(x => x.TransactionDate).ToList();
             return transactions;
         }
     }

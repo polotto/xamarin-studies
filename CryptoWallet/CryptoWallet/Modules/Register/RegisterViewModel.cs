@@ -69,7 +69,10 @@ namespace CryptoWallet.Modules.Register
                 HashedPassword = SecurePasswordHasher.Hash(Password.Value)
             };
             await _userRepository.SaveAsync(newUser);
+
             Preferences.Set(Constants.IS_USER_LOGGED_IN, true);
+            Preferences.Set(Constants.USER_ID, Email.Value);
+
             _navigationService.GoToMainFlow();
             IsBusy = false;
         }

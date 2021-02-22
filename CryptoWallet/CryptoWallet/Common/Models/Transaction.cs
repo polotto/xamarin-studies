@@ -11,5 +11,6 @@ namespace CryptoWallet.Common.Models
         public DateTime TransactionDate { get; set; }
         public string Status { get; set; }
         public string StatusImageSource { get; set; }
+        public string UserEmail { get; set; }
     }
 }

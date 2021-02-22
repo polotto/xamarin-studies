@@ -9,6 +9,7 @@ using CryptoWallet.Common.Dialog;
 using CryptoWallet.Common.Models;
 using CryptoWallet.Common.Navigation;
 using CryptoWallet.Common.Validations;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CryptoWallet.Modules.AddTransaction
@@ -133,7 +134,8 @@ namespace CryptoWallet.Modules.AddTransaction
                 TransactionDate = TransactionDate,
                 Symbol = SelectedCoin.Symbol,
                 Status = IsDeposit == true ? Constants.TRANSACTION_DEPOSITED : Constants.TRANSACTION_WITHDRAWN,
-                Id = string.IsNullOrEmpty(Id) ? 0 : int.Parse(Id)
+                Id = string.IsNullOrEmpty(Id) ? 0 : int.Parse(Id),
+                UserEmail = Preferences.Get(Constants.USER_ID, string.Empty)
             };
             await _repository.SaveAsync(transaction);
         }
