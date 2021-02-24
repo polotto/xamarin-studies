@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Navigation"
+             mc:Ignorable="d"
+             x:Class="Navigation.CalculatorView">
+    <ContentPage.Resources>
+        <Style TargetType="Button" Class="DigitStyle">
+            <Setter Property="BackgroundColor"
+                    Value="#1FAECE" />
+            <Setter Property="HorizontalOptions"
+                    Value="Center" />
+            <Setter Property="VerticalOptions"
+                    Value="Center" />
+            <Setter Property="CornerRadius"
+                    Value="30" />
+            <Setter Property="HeightRequest"
+                    Value="100" />
+            <Setter Property="WidthRequest"
+                    Value="100" />
+            <Setter Property="TextColor"
+                    Value="White" />
+            <Setter Property="FontSize"
+                    Value="32" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Info"
+                 Order="Primary"
+                 Priority="0"
+                 Command="{Binding ShowHistoryCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="Fill"
+          VerticalOptions="EndAndExpand" Padding="10">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+
+                    <Label Grid.Row="0" Grid.ColumnSpan="4" Text="{Binding DisplayText}"
+                           FontSize="68"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="End"
+                           HorizontalOptions="FillAndExpand"/>
+       
+            <Button Text="Clear"
+                    Command="{Binding ClearCommand}"
+                    HorizontalOptions="FillAndExpand"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="4"
+                    StyleClass="DigitStyle"/>
+
+            <Button Text="7"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="7"
+                Grid.Row="2" Grid.Column="0"
+                StyleClass="DigitStyle" />
+
+            <Button Text="8"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="8"
+                Grid.Row="2" Grid.Column="1"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="9"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="9"
+                Grid.Row="2" Grid.Column="2"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="/"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{x:Static local:Operation.Divide}"
+                Grid.Row="2" Grid.Column="3"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="4"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="4"
+                Grid.Row="3" Grid.Column="0"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="5"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="5"
+                Grid.Row="3" Grid.Column="1"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="6"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="6"
+                Grid.Row="3" Grid.Column="2"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="x"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{x:Static local:Operation.Multiply}"
+                Grid.Row="3" Grid.Column="3"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="1"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="1"
+                Grid.Row="4" Grid.Column="0"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="2"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="2"
+                Grid.Row="4" Grid.Column="1"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="3"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="3"
+                Grid.Row="4" Grid.Column="2"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="+"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{x:Static local:Operation.Add}"
+                Grid.Row="4" Grid.Column="3"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="0"
+                Command="{Binding AddCharCommand}"
+                CommandParameter="0"
+                Grid.Row="5" Grid.Column="0"
+                StyleClass="DigitStyle"/>
+
+            <Button Text=","
+                Command="{Binding AddCharCommand}"
+                CommandParameter=","
+                Grid.Row="5" Grid.Column="1"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="="
+                Command="{Binding OperationCommand}"
+                CommandParameter="{x:Static local:Operation.Equal}"
+                Grid.Row="5" Grid.Column="2"
+                StyleClass="DigitStyle"/>
+
+            <Button Text="-"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{x:Static local:Operation.Subtract}"
+                Grid.Row="5" Grid.Column="3"
+                StyleClass="DigitStyle"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
