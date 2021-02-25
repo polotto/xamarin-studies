@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -18,8 +19,12 @@
   <ItemGroup>
     <Folder Include="Application\" />
     <Folder Include="Common\" />
-    <Folder Include="Modules\" />
     <Folder Include="Modules\Calculator\" />
     <Folder Include="Modules\Main\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Modules\History\HistoryView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

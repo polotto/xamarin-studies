@@ -1,4 +1,10 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Navigation.Common;
+using Navigation.Common.Navigation;
+using Navigation.Modules.History;
+using Navigation.Modules.Info;
 using Xamarin.Forms;
 
 namespace Navigation
@@ -19,18 +25,30 @@ namespace Navigation
         Equal
     }
 
-    public class CalculatorViewModel: BindableObject
+    public class CalculatorViewModel: BaseViewModel
     {
+        private INavigationService _navigationService;
         private string _displayText;
         private string _firstNumber = string.Empty;
         private string _secondNumber = string.Empty;
         private CalculatorState _state;
         private Operation _currentOperation;
+        private List<string> _calculatorHistory = new List<string>();
 
-        public CalculatorViewModel()
+        public CalculatorViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
             _state = CalculatorState.PopulatingFirstNumber;
             _currentOperation = Operation.None;
+            SubscribeToMessage();
+        }
+
+        private void SubscribeToMessage()
+        {
+            MessagingCenter.Subscribe<HistoryViewModel, List<string>>(this, "Items", (vm, list) =>
+            {
+                _calculatorHistory = list;
+            });
         }
 
         public string DisplayText
@@ -120,10 +138,33 @@ namespace Navigation
                     break;
             }
             DisplayText = result.ToString();
+            _calculatorHistory.Add($"{_firstNumber} {GetOperationString()} {_secondNumber} = {result}");
             _currentOperation = Operation.None;
             _state = CalculatorState.PopulatingFirstNumber;
             _firstNumber = string.Empty;
             _secondNumber = string.Empty;
+        }
+
+        private string GetOperationString()
+        {
+            return _currentOperation switch
+            {
+                Operation.Add => "+",
+                Operation.Subtract => "-",
+                Operation.Divide => "/",
+                Operation.Multiply => "*",
+                _ => ""
+            };
+        }
+
+        public ICommand ShowHistoryCommand
+        {
+            get => new Command(async () => await ShowHistory());
+        }
+
+        private async Task ShowHistory()
+        {
+            await _navigationService.PushAsync<InfoViewModel>(_calculatorHistory);
         }
     }
 }

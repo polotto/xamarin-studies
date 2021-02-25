@@ -24,7 +24,8 @@
 - mock api: https://example-data.draftbit.com/
 
 ### xamarin snippets
-Visual Studio / Preferences / Text Editor / Code Snippets
+- Visual Studio / Preferences / Text Editor / Code Snippets
+- Rider: Editor > Live Templates
 
 - shortcut: xfprop
 - group: C#

@@ -67,8 +67,16 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\history.png" />
+    <AndroidResource Include="Resources\drawable\information.png" />
+    <AndroidResource Include="Resources\drawable\nohistory.png" />
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
+    <AndroidResource Include="Resources\mipmap-hdpi\nohistory.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\nohistory.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\nohistory.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\nohistory.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\nohistory.png" />
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />

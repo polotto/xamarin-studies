@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Reflection;
 using Autofac;
+using Navigation.Common.Navigation;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Navigation
 {
@@ -19,10 +19,19 @@ namespace Navigation
             builder.RegisterAssemblyTypes(dataAccess)
                 .AsImplementedInterfaces()
                 .AsSelf();
+
+            NavigationPage navigationPage = null;
+
+            Func<INavigation> navigationFunc = () => navigationPage.Navigation;
+
+            builder.RegisterType<NavigationService>().As<INavigationService>()
+                .WithParameter("navigation", navigationFunc);
+            
             // get container
             var container = builder.Build();
 
-            MainPage = container.Resolve<MainView>();
+            navigationPage = new NavigationPage(container.Resolve<CalculatorView>());
+            MainPage = navigationPage;
         }
 
         protected override void OnStart()

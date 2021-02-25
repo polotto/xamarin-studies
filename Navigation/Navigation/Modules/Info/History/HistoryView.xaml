@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="HistoryPage"
+             x:Class="Navigation.Modules.History.HistoryView"
+             Title="History">
+    <ContentPage.Content>
+        <CollectionView ItemsSource="{Binding Items}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete"
+                                           BackgroundColor="Red"
+                                           Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference HistoryPage}}"
+                                           CommandParameter="{Binding}">
+                                </SwipeItem>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Label Padding="20,10,10,10" Text="{Binding .}"/>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.EmptyView>
+                <StackLayout HorizontalOptions="Center">
+                    <Image Source="nohistory.png"
+                           WidthRequest="200"
+                           HeightRequest="200"/>
+                    <Label HorizontalTextAlignment="Center"
+                           Padding="20,10,10,10"
+                           Text="404 - No history found!"
+                           FontSize="24"
+                           TextColor="Gray"/>
+                </StackLayout>
+            </CollectionView.EmptyView>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>
