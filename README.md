@@ -12,6 +12,12 @@
 - autofac assembly scanning: https://autofaccn.readthedocs.io/en/latest/register/scanning.html
 - screaming architecture: https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html
 - clean architecture talk: https://www.youtube.com/watch?v=o_TH-Y78tt4
+- embedded images: https://askxammy.com/learning-about-embedded-images-in-xamarin-forms/
+- font awesome Xamarin: https://felipedasilvabaltazar.medium.com/xamarin-forms-4-5-fontes-customizadas-e-fontawesome-b29f69fc3c
+- long path problem: https://stackoverflow.com/questions/60539637/android-build-error-failed-to-create-javatypeinfo-for-class-xamarin
+- adptative icons: https://forums.xamarin.com/discussion/183799/purpose-of-launcher-foreground-png
+- sign compiled apk: https://stackoverflow.com/questions/10930331/how-to-sign-an-already-compiled-apk
+- apk signer: https://github.com/patrickfav/uber-apk-signer
 
 ### Netget
 - autofac depency injection library: https://autofac.org/ (https://www.nuget.org/packages/Autofac/)
