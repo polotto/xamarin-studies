@@ -18,6 +18,7 @@
 - adptative icons: https://forums.xamarin.com/discussion/183799/purpose-of-launcher-foreground-png
 - sign compiled apk: https://stackoverflow.com/questions/10930331/how-to-sign-an-already-compiled-apk
 - apk signer: https://github.com/patrickfav/uber-apk-signer
+- android release: https://docs.microsoft.com/pt-br/xamarin/android/deploy-test/release-prep/?tabs=macos
 
 ### Netget
 - autofac depency injection library: https://autofac.org/ (https://www.nuget.org/packages/Autofac/)
